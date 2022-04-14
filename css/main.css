@@ -1511,22 +1511,30 @@ footer a {
     
   }
 
+  .list .in{
+    margin-left: -0.0em;
+  }
   .list li:hover .fas{
     display: block;
   }
 
   .list li.in .fas{
     display: block;
-   
+    margin-left: -.5em;
+    margin-right: 5px;
   }
 
   .list li:hover {
     display: flex;
     margin-left: calc(-.021em - 5px);
     color: #F39800;
-  
   }
 
+  .list li.in:hover {
+    margin-left:+0.021em;
+  }
+
+ 
   .list li:hover a{
     color: #F39800;
   }
