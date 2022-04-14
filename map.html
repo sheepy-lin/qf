@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>首頁 | 全芳印刷</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <style>
+            .mapArea {
+                background: rgba(0, 0, 0, 0.8);
+                width: 100%;
+                height: 100vh;
+                max-width: none;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                flex-flow: column;
+            }
+
+            .mapArea .heighlight {
+                text-align: left;
+                width: 80%;
+                color: #FF8181;
+                font-size: 1.5em;
+            }
+
+            .mapArea .mainCon{
+                width: 80%;
+            }
+            .mapArea .contactInf {
+                margin: 0;
+            }
+
+        @media screen and (min-width: 768px) {
+
+
+
+
+            .mapArea .contactInf_01 {
+                margin-right: 40px;
+            }
+
+            .mapArea .mainCon {
+                display: flex;
+                justify-content: center;
+
+            }
+
+            .mapArea .heighlight {
+1;
+                font-size: 2em;
+            }
+
+            .mapArea .inf {
+                margin-top: 2em;
+            }
+
+            .mapArea .placeTit {
+                margin-bottom: .5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mapArea">
+        <p class="heighlight">*印製、選紙請到門市部</p>
+        <div class="mainCon">
+            <div class="contactInf contactInf_01">
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14562.750793544228!2d120.6491127!3d24.1476034!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6dd7636b50f99933!2z5YWo6Iqz5b2p6Imy5Y2w5Yi377yI6ZaA5biC6YOo77yJ!5e0!3m2!1szh-TW!2stw!4v1648921411166!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="inf">
+                    <p class="placeTit">門市部（易豐影像）</p>
+                    <p>地址：台中市南屯區大墩十街207號1F</p>
+                    <p>電話：04-23104868</p>
+                    <p>營業時間：9:00 ~ 18:00</p>
+                </div>
+            </div>
+            <div class="contactInf contactInf_02">
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6700.209294078808!2d120.6624108509731!3d24.166476300283442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469162a47c59b15%3A0x43323951545e1524!2z5YWo6Iqz5b2p6Imy5Y2w5Yi36IKh5Lu95pyJ6ZmQ5YWs5Y-477yI5Y2w5Yi35bel5bug77yJ!5e0!3m2!1szh-TW!2stw!4v1648922501642!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="inf">
+                    <p class="placeTit">印刷工廠</p>
+                    <p>地址：台中市西屯區寧夏東二街13號</p>
+                    <p>營業時間：9:00 ~ 18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        var bg = $(".mapArea")
+        bg.click(closeMap)
+        function closeMap(ev) {
+            if (ev.target == this) {
+                $(".loadMap").animate({"height": "0%"},500);
+                $("body").removeClass("scrollbarNone")
+            } else {
+                console.log(ev.target)
+            }
+        }
+    })
+</script>
+
+</html>
