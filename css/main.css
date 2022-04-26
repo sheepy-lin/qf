@@ -1,4 +1,6 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap");
+@import url("main.css");
+
 
 div,
 footer,
@@ -123,9 +125,22 @@ hr {
 }
 
 .line {
-  padding-top: 9px;
+  /* padding-top: 9px; */
   border-bottom: 1px solid #000;
   width: 100%;
+  position: absolute;
+}
+
+.line:nth-child(1) {
+  top: 9px;
+}
+
+.line:nth-child(2) {
+  top: 18px;
+}
+
+.line:nth-child(4) {
+  top: 27px;
 }
 
 .line.close_2 {
@@ -140,8 +155,18 @@ hr {
   animation-name: XX_line_2;
 }
 
+.XX_line_1_reverse {
+  animation-name: XX_line_1_reverse;
+}
+
+.XX_line_2_reverse {
+  animation-name: XX_line_2_reverse;
+}
+
 .XX_line_1,
-.XX_line_2 {
+.XX_line_2,
+.XX_line_1_reverse,
+.XX_line_2_reverse {
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
@@ -165,7 +190,7 @@ hr {
   padding-right: 15px;
 }
 
-.titleWrap {
+.index .titleWrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -214,7 +239,7 @@ hr {
   margin-bottom: 20px;
 }
 
-.serviceImg {
+.serviceIndexImg {
   width: 70%;
   max-width: 355px;
   margin: 30px auto 0 auto;
@@ -394,7 +419,7 @@ hr {
 
 }
 
-/* @media screen and (max-width: 767px) { */
+
 
 .menuCon {
   position: absolute;
@@ -404,8 +429,6 @@ hr {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 999;
-  align-content: center;
-  justify-content: center;
   display: none;
 }
 
@@ -424,8 +447,29 @@ hr {
   align-content: center;
   justify-content: center;
   flex-flow: column;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
+.menuBg a {
+  border-bottom: 1px #50505000 solid;
+}
+
+
+.menuBg a.in {
+  border-bottom: 1px #ffffff solid;
+
+}
+
+.menuBg a:hover {
+  animation-name: hoverLine;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
 
 footer {
   width: 100%;
@@ -525,7 +569,9 @@ footer a {
 
 /*---------------內頁-案例作品------------------*/
 
-.wrap.collection {
+.wrap.collection,
+.wrap.knowledge,
+.wrap.knowledgeInpage {
   /* padding: 9px; */
   width: 100%;
   background-color: #fff;
@@ -533,18 +579,27 @@ footer a {
   position: relative;
 }
 
-.collectionSide {
-  padding: 9px;
+.collectionSide,
+.knowledgeInpageSide {
+
   width: 100%;
   position: absolute;
-  top: -47px;
+  top: -54px;
   left: 0;
   background-color: #fff;
   box-sizing: border-box;
   box-shadow: 0 0 5px #cacaca
 }
 
-.wrap.collection .pageTit {
+.collectionSide,
+.knowledgeInpageSide {
+  padding: 10px 9px 10px 2.6%;
+}
+
+
+.wrap.collection .pageTit,
+.wrap.knowledgeInpage .pageTit,
+.wrap.knowledge .pageTit {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -559,9 +614,6 @@ footer a {
   display: block;
 }
 
-.wrap.collection .pageTit {
-  font-size: 1.2rem;
-}
 
 .classesListWrap {
   display: none;
@@ -571,8 +623,6 @@ footer a {
   list-style: none;
   margin: 0;
 }
-
-
 
 .list .in,
 .list .in a {
@@ -587,7 +637,7 @@ footer a {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: bold;
-  border-top: 1px #000 solid;
+  /* border-top: 1px #000 solid; */
   border-bottom: 1px #000 solid;
   padding-left: 10px;
   margin-left: 0;
@@ -606,7 +656,6 @@ footer a {
 
 
 .list.all li {
-  /* margin-left: 1em; */
   margin-left: 0;
 }
 
@@ -614,7 +663,6 @@ footer a {
   margin-left: 0;
   display: flex;
   padding: 4PX 5PX;
-  ;
   border-radius: 4PX;
 }
 
@@ -623,7 +671,11 @@ footer a {
 }
 
 .list.all li:hover {
-  margin-left: -1.25em;
+  margin-left: 0;
+}
+
+.list.all li.in:hover {
+  margin-left: 0;
 }
 
 .list.class {
@@ -671,8 +723,7 @@ footer a {
 .className {
   display: block;
   color: #000;
-  /* padding-bottom: 9px; */
-  margin: 0;
+  margin: 0 0 5px 0;
 }
 
 .list li .fas {
@@ -682,29 +733,37 @@ footer a {
 
 
 
-.list li:hover .fas {
-  display: block;
-  margin-right: 5px;
-}
-
-
-
 .pageTitle {
   color: #000;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   max-width: 90%;
 }
 
-.searButtonShow {
+.searchButtonShow {
   width: 10%;
   display: flex;
   justify-content: center;
 }
 
 .itemSide {
-  margin-top: 45px;
+  margin: 53px 10px 1.8% 10px;
   box-sizing: border-box;
+}
 
+.wordSection .tit {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.wordSection .con {
+  padding-bottom: 15px;
+}
+
+.collectionPic img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .itemHead {
@@ -713,13 +772,13 @@ footer a {
   flex-wrap: wrap;
   box-shadow: 0 0 5px #cacaca;
   padding: 10px;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .itemHead .fa-solid {
-
-  margin-top: 8px;
-
+  margin-top: 5px;
 }
 
 .searchBarWrap {
@@ -741,16 +800,19 @@ footer a {
   border: #707070 1px solid;
   border-right: none;
   border-radius: 4px 0 0 4px;
-  font-size: 1.8em;
+  font-size: 1.5em;
+  padding: 5px;
 }
 
 .searchBar button {
   width: 10%;
+  min-width: 30px;
   margin: 0;
   box-sizing: border-box;
   border: #707070 1px solid;
   border-left: none;
   border-radius: 0 4px 4px 0;
+  font-size: 1em;
 }
 
 .temCon {
@@ -767,20 +829,166 @@ footer a {
 }
 
 .item {
-  margin-bottom: 35px;
+  margin-bottom: 1.7%;
 }
 
 .pageGroup {
   text-align: center;
   letter-spacing: 5px;
   margin-bottom: 35px;
+  margin-top: 15px;
+}
+
+.pageGroup a:hover {
+  color: #F39800;
+
+}
+
+/*---------------服務項目------------------------*/
+
+.serviceSide .pageTit {
+  text-align: center;
+  margin-top: .8em;
+  /* font-size: 1.2rem; */
+}
+
+.serviceSide {
+  padding: 9px 9px 9px 2.6%;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+
+.services .itemSide {
+  margin-top: 0;
+}
+
+/* .services .serviceSide {
+  padding: 0;
+} */
+
+.serviceItem {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.ItemWrap .serviceItem img {
+  width: 100%;
+}
+
+.serviceItem ul {
+  list-style: disc;
+}
+
+.serviceItemName {
+  font-weight: bold;
+  margin-left: -1em;
+}
+
+.sideServiceList ul,
+.cube,
+.sideServiceConList {
+  display: none;
+}
+
+
+/*----------------------印刷知識------------------*/
+
+.knowledgeItem .knowledgeItemImg {
+  width: 100%;
+  margin: 0;
+}
+
+.knowledgeItemImg img {
+  width: 100%;
+}
+
+.knowledgeItemCon {
+  margin-top: 15px;
+}
+
+/*---------------------印刷知識標題------------------------------*/
+
+
+
+.knowledgeInpage .titleWrap .tit {
+  border-left: 15px solid #000;
+  padding-left: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 2em;
+  font-size: 1.3em;
+}
+
+.knowledgeInpage .titleWrap hr {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #000;
+  display: block;
+}
+
+.knowledgeInpage .titleWrap .date {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.edit {
+  margin: 10px 0;
+}
+
+.preAndNex {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+  padding: 5px 0;
+}
+
+.shareWrap {
+  display: flex;
+  justify-content: right;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.share_fb {
+  margin-right: 5px;
+}
+
+.share_fb i {
+  color: #135BB9;
+}
+
+.share_line i {
+  color: #0D9347;
+}
+
+.pageOtherSide a {
+  display: block;
+  padding: 5px 0;
+
+}
+
+.shareBtn {
+  padding: 1px;
+  border-radius: 2px;
+  border: 1px Solid #707070;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.pageOtherSide .titleWrap a:hover{
+  color: #FFAA00;
+  
 }
 
 @media screen and (min-width: 600px) {
 
-  /* .wrap.about{
-    margin-bottom: 35px;
-  } */
   .flowWrap .pageTit {
     text-align: left;
   }
@@ -813,6 +1021,38 @@ footer a {
     margin: 0;
 
   }
+
+  /*---------------服務項目------------------------*/
+
+  .serviceItem {
+    display: flex;
+  }
+
+  .serviceImg {
+    margin-top: 0px;
+    width: 70%;
+  }
+
+  .serviceItem .serviceList {
+    width: 30%;
+    margin-top: 0;
+  }
+
+  /*-------------------印刷知識---------------------*/
+
+
+
+  .knowledgeItem {
+    width: calc(50% - 10px);
+    margin: 5px 5px 15px 5px;
+    box-sizing: border-box;
+  }
+
+  .wrap.knowledge .temCon {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
 
 }
 
@@ -871,7 +1111,7 @@ footer a {
     display: inline-block;
   }
 
-  .serviceImg,
+  .serviceIndexImg,
   .serviceGroup {
     width: 50%;
     flex: 1;
@@ -885,7 +1125,7 @@ footer a {
     margin-top: 5%;
   }
 
-  .serviceImg {
+  .serviceIndexImg {
     margin: 0;
     padding: 15px;
     box-sizing: border-box;
@@ -925,7 +1165,8 @@ footer a {
 
   /*--------------內頁-案例作品--------------------------*/
 
-  .wrap.collection {
+  .wrap.collection,
+  .wrap.knowledge .wrap.knowledgeInpage {
     position: relative;
     /* top: 66px; */
     left: 0;
@@ -933,7 +1174,7 @@ footer a {
 
   }
 
-  .temCon {
+  .collection .temCon {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -944,6 +1185,23 @@ footer a {
     max-width: 400px;
   }
 
+  /*---------------服務項目------------------------*/
+
+  .serviceItem {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .serviceSide {
+    padding-left: 2.6%;
+  }
+
+  /*----------------印刷知識-----------------------------*/
+
+  .knowledge .itemSide {
+    flex: 5;
+
+  }
 
 }
 
@@ -953,6 +1211,7 @@ footer a {
   body {
     margin: 0;
     height: 100%;
+    font-size: 14px;
   }
 
   .slideGruop {
@@ -984,7 +1243,21 @@ footer a {
     width: 80px;
     border-right: 1px #707070 solid;
     z-index: 999;
-    ;
+    overflow: hidden;
+
+  }
+
+  .menuBg {
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    flex-flow: column;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .menuBg a.in {
+    border-bottom: 1px #484848 solid;
   }
 
   header.lineMoveToOpen {
@@ -992,6 +1265,7 @@ footer a {
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
+
 
   header.lineMoveToClose {
     animation-name: lineClose;
@@ -1069,12 +1343,18 @@ footer a {
     animation-fill-mode: forwards;
   }
 
+  .menuCon {
+    width: 80px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+
   .menuCon a {
     color: #000;
     padding: 0;
     margin-bottom: 5px;
     text-align: left;
-    width: 80px;
+    width: 100%;
   }
 
   .slideItem {
@@ -1083,7 +1363,7 @@ footer a {
     width: 100%;
   }
 
-  .titleWrap .moreBtn {
+  .index .titleWrap .moreBtn {
     padding: 1% 3%;
     font-size: .95em;
   }
@@ -1115,7 +1395,7 @@ footer a {
     margin-bottom: 28px;
   }
 
-  .titleWrap {
+  .index .titleWrap {
     flex-flow: column;
     justify-content: left;
     align-items: flex-start;
@@ -1366,7 +1646,7 @@ footer a {
     flex-flow: row-reverse;
   }
 
- 
+
 
   .half:first-child {
     height: auto;
@@ -1397,7 +1677,7 @@ footer a {
 
   /*--------------------內頁-作品案例-----------------------*/
 
-  .searButtonShow {
+  .searchButtonShow {
     display: none;
   }
 
@@ -1413,62 +1693,94 @@ footer a {
 
   .searchBar input {
     font-size: 1em;
+    padding: 5px;
   }
 
   .searchBar button {
     background: none;
+    width: 2.2em;
   }
 
   .itemHead .fa-solid {
     margin-top: 2px;
+    margin-right: 3px;
   }
 
-  .collectionSide {
+  .collectionSide,
+  .knowledgeSide,
+  .knowledgeInpageSide {
     position: relative;
     width: auto;
     padding-top: 55px;
+    padding-bottom: 0px;
     top: 0;
+    box-shadow: none;
   }
 
-  .wrap.collection {
+  .knowledgeInpageSide,
+  .collectionSide {
+    padding-left: 0;
+  }
+
+  .wrap.collection,
+  .wrap.knowledge {
     padding-left: 160px;
     display: flex;
   }
 
-  .collectionSide {
+  .collectionSide,
+  .knowledgeSide,
+  .knowledgeInpageSide {
+    flex: 1;
+    padding-left: 15px;
+  }
+
+
+  .itemSide {
+    margin-right: 4.5%;
+  }
+
+  .itemSide {
+    flex: 5;
+  }
+
+  .collectionInPage .itemSide {
+    display: flex;
+    flex: 5.3;
+    padding-left: 2.5%;
+    padding-right: 2.05%;
+    box-sizing: border-box;
+  }
+
+  .wordSection {
     flex: 1;
 
   }
 
-  .itemSide {
-    flex: 5.3;
-    padding-left: 5%;
-    box-sizing: border-box;
-    padding-right: 4.1%;
-
+  .wordSection .forFix {
+    position: fixed;
+    max-height: 70vh;
+    overflow: auto;
   }
 
-  .temCon {
+  .collectionPic {
+    flex: 2.1;
+    padding-top: 10px;
+  }
+
+  .collection .temCon {
     display: flex;
     justify-content: space-between;
+    margin: 0;
   }
 
   .button {
     display: none;
   }
 
-  .collectionSide,
+
   .itemHead {
     box-shadow: none;
-  }
-
-  .itemHead {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .menuBg {
-    display: block;
   }
 
   .list ul {
@@ -1477,19 +1789,35 @@ footer a {
 
   .list ul li {
     background: none;
-    
     text-align: left;
-    margin-left: 1em;
+    margin-left: .7em;
     padding: 0;
     display: flex;
   }
 
+  .itemHead {
+    margin-bottom: 35px;
+  }
+
   .item {
-    max-width: 367;
-    min-width: 200px;
-    width: 33.3%;
-    padding: 10px;
+    max-width: none;
+    /* min-width: 200px; */
+    width: 28.4%;
+
+    /* padding: 10px; */
     box-sizing: border-box;
+    margin-right: 7.2%;
+  }
+
+  .item:nth-child(3n) {
+    margin-right: 0;
+  }
+
+
+
+  .list li:hover .fas {
+    display: block;
+    margin-right: 5px;
   }
 
   .list.class P {
@@ -1497,51 +1825,281 @@ footer a {
   }
 
   .list.all {
-    border: none;
+    width: 50%;
+    min-width: 100px;
+    padding-right: 0;
+    box-sizing: content-box;
   }
 
   .list.class {
-    max-width: 128px;
+    width: 50%;
+    min-width: 100px;
   }
 
   .list .in,
   .list .in a {
     color: #F39800;
     background: none;
-    
+
   }
 
-  .list .in{
-    margin-left: -0.0em;
+  .list .in {
+    margin-left: 0em;
   }
-  .list li:hover .fas{
+
+  .list li:hover .fas {
     display: block;
   }
 
-  .list li.in .fas{
+  .list li.in .fas {
     display: block;
     margin-left: -.5em;
     margin-right: 5px;
   }
 
-  .list li:hover {
+  .list li:not(.in):hover {
     display: flex;
-    margin-left: calc(-.021em - 5px);
+    /* margin-left: -1.25em; */
+    margin-left: -0.6em;
     color: #F39800;
   }
 
-  .list li.in:hover {
-    margin-left:+0.021em;
+  .list li:hover a {
+    color: #F39800;
   }
 
- 
-  .list li:hover a{
+
+
+
+  /*--------------服務項目-------------------*/
+
+
+  .serviceItem {
+    /* max-width: 650px; */
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .services .serviceSide {
+    position: relative;
+    width: auto;
+    padding-top: 55px;
+    top: 0;
+    flex: 1;
+  }
+
+  .serviceSide .pageTit {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .serviceItem .serviceList {
+    display: none;
+  }
+
+  .services .itemSide {
+    margin: 90px 4.5% 35px 10px;
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  .serviceWrap {
+    width: 89.6%;
+    max-width: 1260px;
+
+  }
+
+  .serviceWrap_co_1,
+  .serviceWrap_co_2 {
+    display: flex;
+
+  }
+
+
+  .serviceWrap_co_1 .serviceItem {
+    width: auto;
+    flex: 1;
+    max-width: none;
+  }
+
+  .serviceWrap_co_2 .serviceItem:nth-child(1) {
+    width: 53.35%;
+    margin: 0;
+    max-width: none;
+  }
+
+  .serviceWrap_co_2 .serviceItem:nth-child(2) {
+    width: 47.65%;
+    margin: 0;
+    max-width: none;
+  }
+
+  .sideServiceList ul {
+    display: block;
+    list-style: decimal;
+    padding-left: 1em;
+    margin-top: 1.5em;
+  }
+
+  .sideServiceList ul li:hover {
+    color: #FFAA00;
+    cursor: pointer;
+  }
+
+  .serviceImg {
+    width: 100%;
+  }
+
+  .serviceImg img {
+    width: 100%;
+    opacity: .2;
+  }
+
+  .serviceImg img:hover {
+    cursor: pointer;
+    animation-name: ops;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .cube {
+    display: flex;
+    flex-wrap: wrap;
+    width: 53.9%;
+    height: 9.7%;
+    max-height: 75px;
+    max-width: 110px;
+    border: 1px solid #707070;
+    box-sizing: border-box;
+  }
+
+  /* .col_01 {
+    border-bottom: 1px solid #505050;
+  } */
+
+  /* .col_1,
+  .col_2 {
+    display: flex;
+  }
+
+  .col_1 {
+    height: 45%;
+  }
+
+  .col_2 {
+    height: 55%;
+  } */
+
+  .thum_1,
+  .thum_2,
+  .thum_4 {
+    border-right: 1px solid #505050;
+  }
+
+  .thum_1,
+  .thum_2,
+  .thum_3 {
+    border-bottom: 1px solid #505050;
+    height: 45%;
+    width: 33.3333333%;
+  }
+
+  .thum_4,
+  .thum_5 {
+    height: 55%;
+    width: 50%;
+  }
+
+  .thum_1,
+  .thum_2,
+  .thum_3,
+  .thum_4,
+  .thum_5 {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .cube div:hover {
+    background: #E2E2E2;
+  }
+
+  .sideServiceConList {
+    list-style: disc;
+    margin-left: -1em;
+  }
+
+  .drColor {
     color: #F39800;
+  }
+
+  .serviceImg img.drOpacity {
+    animation-name: ops;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .drBg {
+    background: #E2E2E2;
+    ;
+  }
+
+  .sideServiceConList.conOpacity {
+    animation-name: conOpacity;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  /*-----------------印刷知識------------------------------*/
+
+  .knowledgeItem {
+    min-width: 250px;
+    max-width: 440px;
+    margin: 70px 5px 15px 5px;
+    box-sizing: border-box;
+  }
+
+  .knowledgeItem .knowledgeItemImg {
+    width: 57.2%;
+    min-width: 200px;
+    max-width: 252px;
+  }
+
+  .wrap.knowledge .temCon {
+    justify-content: space-between;
+  }
+
+  .knowledgeInpage .itemHead {
+    display: none;
+  }
+
+  .itemSide {
+    display: flex;
+  }
+
+  .temCon {
+    margin-right:10%;
+  }
+
+  .knowledgeInpage .titleWrap{
+    margin-top: 65px;
+
+  }
+
+  .pageOtherSide .titleWrap p{
+    padding-top: 30px;
   }
 
 }
 
 @media screen and (min-width: 1366px) {
+
+  body {
+    font-size: 16px;
+  }
 
   .text {
     font-size: 1.8em;
@@ -1556,7 +2114,7 @@ footer a {
     width: 29%;
   }
 
-  .titleWrap {
+  .index .titleWrap {
     margin-top: 12%;
   }
 
@@ -1637,23 +2195,35 @@ footer a {
     box-sizing: border-box;
   }
 
+  /*-----------內頁-案例作品-------------------*/
 
+  .collectionInPage .itemSide {
+    display: flex;
+    flex: 5.3;
+    padding-left: 5%;
+    box-sizing: border-box;
+    padding-right: 4.1%;
+  }
+
+  /*-----------------印刷知識------------------------------*/
+
+  .knowledgeItem {
+    width: calc(32.3% - 10px);
+  }
+
+  .knowledgeItemCursor {
+    left: 77%;
+  }
+
+  .knowledgeInpage .itemSide,
+  .knowledge .itemSide {
+    flex: 3;
+  }
 
 }
 
 @media screen and (min-width: 1920px) {
 
-  /* .arrowBtn {
-    height: 35px;
-    width: 57px;
-  }
-
-  .arrowBtn svg {
-    width: 30px;
-    height: 18px;
-  } */
-
- 
 
   .moreBtn {
     width: 87px;
@@ -1664,8 +2234,15 @@ footer a {
     align-items: center;
   }
 
-}
+  .knowledgeItem {
+    padding: 20px;
+  }
 
+  .knowledgeItemTitGroup {
+    margin-top: 15px;
+  }
+
+}
 
 @keyframes XX_line_1 {
   0% {
@@ -1688,6 +2265,31 @@ footer a {
   100% {
     transform-origin: center;
     transform: rotate(-45deg);
+  }
+}
+
+@keyframes XX_line_1_reverse {
+  0% {
+    transform-origin: center;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes XX_line_2_reverse {
+  0% {
+    transform-origin: center;
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: rotate(0deg);
+
   }
 }
 
@@ -1732,5 +2334,36 @@ footer a {
 
   100% {
     width: 80px;
+  }
+}
+
+@keyframes hoverLine {
+
+  0% {
+    border-bottom: 1px #50505000 solid;
+  }
+
+  100% {
+    border-bottom: 1px #505050 solid;
+  }
+}
+
+@keyframes ops {
+  0% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes conOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
