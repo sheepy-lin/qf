@@ -912,81 +912,6 @@ footer a {
 
 
 
-.knowledgeInpage .titleWrap .tit {
-  border-left: 15px solid #000;
-  padding-left: 8px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 2em;
-  font-size: 1.3em;
-}
-
-.knowledgeInpage .titleWrap hr {
-  width: 100%;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #000;
-  display: block;
-}
-
-.knowledgeInpage .titleWrap .date {
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.edit {
-  margin: 10px 0;
-}
-
-.preAndNex {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #707070;
-  border-bottom: 1px solid #707070;
-  padding: 5px 0;
-}
-
-.shareWrap {
-  display: flex;
-  justify-content: right;
-  font-size: 2em;
-  line-height: 1em;
-}
-
-.share_fb {
-  margin-right: 5px;
-}
-
-.share_fb i {
-  color: #135BB9;
-}
-
-.share_line i {
-  color: #0D9347;
-}
-
-.pageOtherSide a {
-  display: block;
-  padding: 5px 0;
-
-}
-
-.shareBtn {
-  padding: 1px;
-  border-radius: 2px;
-  border: 1px Solid #707070;
-  font-size: 12px;
-  line-height: 12px;
-}
-
-.pageOtherSide .titleWrap a:hover{
-  color: #FFAA00;
-  
-}
-
 @media screen and (min-width: 600px) {
 
   .flowWrap .pageTit {
@@ -1042,7 +967,7 @@ footer a {
 
 
 
-  .knowledgeItem {
+  .knowledgeInpage .knowledgeItem {
     width: calc(50% - 10px);
     margin: 5px 5px 15px 5px;
     box-sizing: border-box;
@@ -1200,7 +1125,6 @@ footer a {
 
   .knowledge .itemSide {
     flex: 5;
-
   }
 
 }
@@ -2207,9 +2131,9 @@ footer a {
 
   /*-----------------印刷知識------------------------------*/
 
-  .knowledgeItem {
+  /* .knowledgeItem {
     width: calc(32.3% - 10px);
-  }
+  } */
 
   .knowledgeItemCursor {
     left: 77%;
