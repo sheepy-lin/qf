@@ -143,9 +143,9 @@ $(document).ready(function () {
           menuBtnDefault.css("z-index", "1000").removeClass("Default").addClass("Close")
           menuWord.addClass("XX")
 
-          $(".line:nth-child(1),.line:nth-child(4)").hide();
-          $(".close_1").addClass("XX_line_1 XX_postion")
-          $(".close_2").addClass("XX_line_2 XX_postion").show();
+          $(".line:nth-child(1),.line:nth-child(4)").fadeOut(800);
+          $(".close_1").addClass("XX_line_1 XX_postion").removeClass("XX_line_1_reverse");
+          $(".close_2").fadeIn().addClass("XX_line_2 XX_postion").removeClass("XX_line_2_reverse");;
 
 
           menuState = true;
@@ -161,9 +161,9 @@ $(document).ready(function () {
           menuBtnDefault.css("z-index", "0").addClass("Default").addClass("Close")
           menuWord.removeClass("XX")
 
-          $(".line:nth-child(1),.line:nth-child(4)").show();
-          $(".close_1").removeClass("XX_line_1 XX_postion")
-          $(".close_2").removeClass("XX_line_2 XX_postion").hide();
+          $(".line:nth-child(1),.line:nth-child(4)").fadeIn(800);
+          $(".close_1").addClass("XX_line_1_reverse").removeClass("XX_line_1 XX_postion");
+          $(".close_2").addClass("XX_line_2_reverse").removeClass("XX_line_2").fadeOut(800);
 
           menuState = false;
 
@@ -259,7 +259,8 @@ $(document).ready(function () {
   mapSetionIcon.click(loadMap)
 
   function loadMap() {
-    $(".loadMap").load("../map.html").animate({ "height": "100%" }, 500)
+  
+    $(".loadMap").load("map.html").animate({ "height": "100%" }, 500)
     console.log("Map")
     $("body").addClass("scrollbarNone")
   }
@@ -270,7 +271,8 @@ $(document).ready(function () {
   mailIcon.click(loadEmail)
 
   function loadEmail() {
-    $(".loadMap").load("../email.html").animate({ "height": "100%" }, 500)
+    
+    $(".loadMap").load("email.html").animate({ "height": "100%" }, 500)
     console.log("Map")
     $("body").addClass("scrollbarNone")
   }

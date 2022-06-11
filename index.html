@@ -13,6 +13,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+  <link rel="stylesheet" type="text/css" href="css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
@@ -38,7 +39,7 @@
           <a href="https://www.instagram.com/quanfangprint/" target="_blank"><i class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/QuanFangPrint/" target="_blank"><i class="fab fa-facebook"></i></a>
           <a class="mapSetionIcon"><i class="fas fa-map-marker-alt"></i></a>
-          <a class="messengerIcon" href=""><i class="fab fa-facebook-messenger"></i></a>
+          <a class="messengerIcon" href="https://m.me/QuanFangPrint"><i class="fab fa-facebook-messenger"></i></a>
           <a class="mailIcon"><i class="far fa-envelope"></i></a>
         </div>
         <div class="coInf">
@@ -58,17 +59,21 @@
       </div>
     </div>
   </header>
+  <!--輪播-->
   <section class="slideGruop">
+    <!--輪播主內容-->
     <section class="slideShowWrap">
       <section class="slideItem">
         <div class="layout">
-          <img class="slideImg" src="images/banner_01.png" />
+          <a class="slideImg" src="collection_inpage.html"><img src="images/banner_01.png" /></a>
           <section class="slideCon">
             <section class="titleWrap">
               <div class="text">
+                <a src="collection_inpage.html">
                 朝陽科大<br />
                 工業設計系畢業展<br />
                 嶼生予生
+              </a>
               </div>
               <a class="moreBtn" href="collection_inpage.html"> MORE </a>
             </section>
@@ -77,13 +82,15 @@
       </section>
       <section class="slideItem">
         <div class="layout">
-          <img class="slideImg" src="images/banner_02.png" />
+          <a class="slideImg" src="collection_inpage.html"><img src="images/banner_02.png" /></a>
           <section class="slideCon">
             <section class="titleWrap">
               <div class="text">
+                <a src="collection_inpage.html">
                 崑山科技大學<br />
                 視覺傳達設計系<br />
                 ±37.5℃
+                </a>
               </div>
               <a class="moreBtn" href="collection_inpage.html"> MORE </a>
             </section>
@@ -92,13 +99,15 @@
       </section>
       <section class="slideItem">
         <div class="layout">
-          <img class="slideImg" src="images/banner_03.png" />
+          <a class="slideImg" src="collection_inpage.html"><img src="images/banner_03.png" /></a>
           <section class="slideCon">
             <section class="titleWrap">
               <div class="text">
+                <a src="collection_inpage.html">
                 實踐大學<br />
                 工業產品設計系<br />
                 HARBOR
+              </a>
               </div>
               <a class="moreBtn" href="collection_inpage.html"> MORE </a>
             </section>
@@ -107,13 +116,15 @@
       </section>
       <section class="slideItem">
         <div class="layout">
-          <img class="slideImg" src="images/banner_04.png" />
+          <a class="slideImg" src="collection_inpage.html"><img src="images/banner_04.png" /></a>
           <section class="slideCon">
             <section class="titleWrap">
               <div class="text">
+                <a src="collection_inpage.html">
                 台中科技大學<br />
                 商業設計系<br />
                 5秒行動
+              </a>
               </div>
               <a class="moreBtn" href="collection_inpage.html"> MORE </a>
             </section>
@@ -122,13 +133,15 @@
       </section>
       <section class="slideItem">
         <div class="layout">
-          <img class="slideImg" src="images/banner_05.png" />
+          <a class="slideImg" src="collection_inpage.html"><img src="images/banner_05.png" /></a>
           <section class="slideCon">
             <section class="titleWrap">
               <div class="text">
+                <a src="collection_inpage.html">
                 台中科技大學<br />
                 室內設計系<br />
                 THESIS DESIGN
+              </a>
               </div>
               <a class="moreBtn" href="collection_inpage.html"> MORE </a>
             </section>
@@ -136,6 +149,8 @@
         </div>
       </section>
     </section>
+    <!--輪播主內容END-->
+    <!--輪播箭頭-->
     <div class="arrows">
       <div class="arrowBtn left">
         <!-- <i class="fa-solid fa-arrow-left-long"></i> -->
@@ -162,6 +177,8 @@
 
       </div>
     </div>
+    <!--輪播箭頭END-->
+    <!--輪播縮圖-->
     <div class="thumbs">
       <div class="thumb"><img src="images/banner_01.png" /></div>
       <div class="thumb"><img src="images/banner_02.png" /></div>
@@ -169,7 +186,9 @@
       <div class="thumb"><img src="images/banner_04.png" /></div>
       <div class="thumb"><img src="images/banner_05.png" /></div>
     </div>
+    <!--輪播縮圖END-->
   </section>
+  <!--輪播END-->
   <section class="servicesWrap">
     <div class="serviceIndexImg"><img src="images/services.png" /></div>
     <div class="serviceGroup">
@@ -301,8 +320,7 @@
         </div>
         <div class="content row">
           <p><label for="content">內容<span class="heighlight">*</span></label></p>
-          <p><textarea id="content">
-          </textarea>
+          <p><textarea id="content"></textarea>
           </p>
         </div>
         <div class="butWrap">
@@ -316,7 +334,46 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/122d567f98.js" crossorigin="anonymous"></script>
 <script src="js/custom.js"></script>
 
+<!-- Messenger 洽談外掛程式 Code -->
+<div id="fb-root"></div>
+
+<!-- Your 洽談外掛程式 code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+
+ <!-- Messenger 洽談外掛程式 Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your 洽談外掛程式 code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "175728929225547");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v13.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
 </html>
+

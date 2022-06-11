@@ -6,13 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>首頁 | 全芳印刷</title>
 
+    <meta property="og:url"                content="" />
+    <meta property="og:type"               content="article" />
+    <!-- 取標題 -->
+    <meta property="og:title"              content="" />
+    <!-- 取內容大約前100字 -->
+    <meta property="og:description"        content="" />
+    <!-- 取主圖 -->
+    <meta property="og:image"              content="" />
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
@@ -39,7 +48,7 @@
                     <a href="https://www.facebook.com/QuanFangPrint/" target="_blank"><i
                             class="fab fa-facebook"></i></a>
                     <a class="mapSetionIcon"><i class="fas fa-map-marker-alt"></i></a>
-                    <a class="messengerIcon" href=""><i class="fab fa-facebook-messenger"></i></a>
+                    <a class="messengerIcon" href="https://m.me/QuanFangPrint"><i class="fab fa-facebook-messenger"></i></a>
                     <a class="mailIcon"><i class="far fa-envelope"></i></a>
                 </div>
                 <div class="coInf">
@@ -71,11 +80,11 @@
                 <div class="list class">
                     <ul class="className">
                         <p class="className">按分類</p>
-                        <li><i class="fas fa-arrow-circle-right"></i><a href="#">2008</a></li>
-                        <li><i class="fas fa-arrow-circle-right"></i><a href="#">裸背線裝</a></li>
-                        <li><i class="fas fa-arrow-circle-right"></i><a href="#">畢業製作</a></li>
-                        <li><i class="fas fa-arrow-circle-right"></i><a href="#">商業印刷</a></li>
-                        <li><i class="fas fa-arrow-circle-right"></i><a href="#">特殊加工</a></li>
+                        <li><i class="fas fa-arrow-circle-right"></i><a href="knowledge.html">2008</a></li>
+                        <li><i class="fas fa-arrow-circle-right"></i><a href="knowledge.html">裸背線裝</a></li>
+                        <li><i class="fas fa-arrow-circle-right"></i><a href="knowledge.html">畢業製作</a></li>
+                        <li><i class="fas fa-arrow-circle-right"></i><a href="knowledge.html">商業印刷</a></li>
+                        <li><i class="fas fa-arrow-circle-right"></i><a href="knowledge.html">特殊加工</a></li>
                     </ul>
                 </div>
             </section>
@@ -96,7 +105,9 @@
                     <div class="titleWrap">
                         <p class="tit">如何搭配白墨印刷？</p>
                         <hr />
-                        <p class="date"><span>分類：特殊色</span><span>2021/08/09</span></p>
+                        <!--分類+日期-->
+                        <p class="date"><span>分類：特殊色 <i class="fas fa-angle-right">技法</i></span><span>2021/08/09</span></p>
+                        <!--分類+日期END-->
                     </div>
                     <!-----------------編輯器從這裡開始----------------->
                     <div class="edit">
@@ -151,7 +162,44 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/122d567f98.js" crossorigin="anonymous"></script>
-<script src="js/custom.js"></script>
 
+<script src="js/custom.js"></script>
+<!-- Messenger 洽談外掛程式 Code -->
+<div id="fb-root"></div>
+
+<!-- Your 洽談外掛程式 code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+
+ <!-- Messenger 洽談外掛程式 Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your 洽談外掛程式 code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "175728929225547");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v13.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 </html>

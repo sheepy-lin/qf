@@ -44,6 +44,11 @@ a {
     you can use these styles or any others that you wish.
 */
 
+.heightlight{
+  color: #F39800;
+}
+
+
 .clear-fix {
   padding-top: 1px;
 }
@@ -61,6 +66,9 @@ a {
   left: 0;
   z-index: 9999;
   width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow:auto;
 }
 
 .menuGroup {
@@ -580,8 +588,8 @@ footer a {
 }
 
 .collectionSide,
+.knowledgeSide,
 .knowledgeInpageSide {
-
   width: 100%;
   position: absolute;
   top: -54px;
@@ -592,6 +600,7 @@ footer a {
 }
 
 .collectionSide,
+.knowledgeSide,
 .knowledgeInpageSide {
   padding: 10px 9px 10px 2.6%;
 }
@@ -908,8 +917,87 @@ footer a {
   margin-top: 15px;
 }
 
+
 /*---------------------印刷知識標題------------------------------*/
 
+.knowledgeInpage .titleWrap .tit {
+  border-left: 15px solid #000;
+  padding-left: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 2em;
+  font-size: 1.3em;
+}
+
+.knowledgeInpage .titleWrap hr {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #000;
+  display: block;
+}
+
+.knowledgeInpage .titleWrap .date {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.edit {
+  margin: 10px 0;
+}
+
+.preAndNex {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+  padding: 5px 0;
+}
+
+.shareWrap {
+  display: flex;
+  justify-content: right;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.share_fb {
+  margin-right: 5px;
+}
+
+.share_fb i {
+  color: #135BB9;
+}
+
+.share_line i {
+  color: #0D9347;
+}
+
+.knowledgeInpage .pageOtherSide a {
+  display: block;
+  padding: 5px 0;
+
+}
+
+.shareBtn {
+  padding: 1px;
+  border-radius: 2px;
+  border: 1px Solid #707070;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.knowledgeInpage .pageOtherSide .titleWrap a:hover{
+  color: #FFAA00;
+}
+
+.fa-magnifying-glass{
+  color: #707070;
+}
+  /*--------------------------------------------*/
 
 
 @media screen and (min-width: 600px) {
@@ -976,6 +1064,13 @@ footer a {
   .wrap.knowledge .temCon {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .knowledgeItem{
+    width: 45%;
+    margin: 0;
+    margin-bottom: 10px;
   }
 
 
@@ -1127,6 +1222,13 @@ footer a {
     flex: 5;
   }
 
+  .knowledgeItem{
+    width: 29%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -1224,6 +1326,10 @@ footer a {
     margin-bottom: 90px;
   }
 
+  .mailIcon{
+    cursor: pointer;
+
+  }
   .fa-envelope {
     margin-bottom: 10px;
   }
@@ -1623,6 +1729,9 @@ footer a {
   .searchBar button {
     background: none;
     width: 2.2em;
+    display: flex;
+    justify-items: center;
+    align-items: center;
   }
 
   .itemHead .fa-solid {
@@ -1688,7 +1797,9 @@ footer a {
   }
 
   .collectionPic {
-    flex: 2.1;
+    /* flex: 2.1; */
+    width: 66%;
+    margin-left: 34%;
     padding-top: 10px;
   }
 
@@ -1721,6 +1832,7 @@ footer a {
 
   .itemHead {
     margin-bottom: 35px;
+    /* display: none; */
   }
 
   .item {
@@ -1799,7 +1911,6 @@ footer a {
 
 
   .serviceItem {
-    /* max-width: 650px; */
     margin: 0 auto;
     padding: 0;
   }
@@ -1825,6 +1936,7 @@ footer a {
     margin: 90px 4.5% 35px 10px;
     justify-content: flex-end;
     display: flex;
+    align-content:stretch;
   }
 
   .serviceWrap {
@@ -1940,7 +2052,6 @@ footer a {
   .thum_4,
   .thum_5 {
     display: flex;
-
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -1988,8 +2099,8 @@ footer a {
 
   .knowledgeItem .knowledgeItemImg {
     width: 57.2%;
-    min-width: 200px;
-    max-width: 252px;
+    /* min-width: 200px;
+    max-width: 252px; */
   }
 
   .wrap.knowledge .temCon {
@@ -2002,10 +2113,16 @@ footer a {
 
   .itemSide {
     display: flex;
+    flex-flow: column;
   }
 
   .temCon {
     margin-right:10%;
+  }
+
+  .pageOtherSide{
+
+    margin-right: 10%;
   }
 
   .knowledgeInpage .titleWrap{
@@ -2016,6 +2133,9 @@ footer a {
   .pageOtherSide .titleWrap p{
     padding-top: 30px;
   }
+
+
+
 
 }
 
@@ -2063,6 +2183,14 @@ footer a {
     padding-right: 10%;
     margin-top: 200px;
     margin-bottom: 200px;
+  }
+
+  .knowledgeInpageSide{
+    flex: 0.7;
+  }
+
+  .knowledgeInpage .itemSide{
+    flex-flow: row;
   }
 
   .placeTit,
@@ -2135,13 +2263,17 @@ footer a {
     width: calc(32.3% - 10px);
   } */
 
-  .knowledgeItemCursor {
+  /* .knowledgeItemCursor {
     left: 77%;
-  }
+  } */
 
   .knowledgeInpage .itemSide,
   .knowledge .itemSide {
     flex: 3;
+  }
+
+  .temCon,.pageOtherSide{
+    margin-right: 6%;
   }
 
 }
